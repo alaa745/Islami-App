@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:islamiapp/ui/home/quran/sura_details.dart';
+import 'package:islamiapp/ui/home/quran/sura_details_args.dart';
+import 'package:islamiapp/ui/home/quran/verse_name.dart';
 
 class QuranTab extends StatelessWidget {
   QuranTab({super.key});
@@ -158,16 +161,19 @@ class QuranTab extends StatelessWidget {
             itemCount: chapters.length,
             itemBuilder: (context, int index) {
               return InkWell(
-                onTap: () {},
-                child: Center(
-                  child: Container(
-                    child: Text(
-                      chapters[index],
-                      style: const TextStyle(
-                        fontSize: 25,
-                        color: Color(0xFF242424),
-                      ),
+                onTap: () {
+                  Navigator.pushNamed(
+                    context,
+                    SuraDetails.routeName,
+                    arguments: SuraDetailsArguments(
+                      index: index,
+                      title: chapters[index],
                     ),
+                  );
+                },
+                child: Center(
+                  child: VerseName(
+                    title: chapters[index],
                   ),
                 ),
               );
