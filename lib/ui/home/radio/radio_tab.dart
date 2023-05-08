@@ -7,15 +7,56 @@ class RadioTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      extendBodyBehindAppBar: true,
-      backgroundColor: Colors.black,
-      body: Container(
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage('assets/images/main_background.png'),
-            fit: BoxFit.fill,
-          ),
+    return Container(
+      margin: const EdgeInsets.only(top: 150),
+      child: Center(
+        child: Column(
+          // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Image.asset('assets/images/radio_header.png'),
+            Container(
+              margin: const EdgeInsets.symmetric(vertical: 20),
+              child: const Text(
+                'Quran karem radio',
+                style: TextStyle(fontSize: 22, color: Color(0xFF242424)),
+              ),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                IconButton(
+                  splashRadius: 30,
+                  iconSize: 50,
+                  onPressed: () {},
+                  color: Theme.of(context).primaryColor,
+                  icon: const Icon(
+                    Icons.skip_previous_rounded,
+                    // size: 50,
+                  ),
+                ),
+                IconButton(
+                  splashRadius: 40,
+                  iconSize: 70,
+                  onPressed: () {},
+                  color: Theme.of(context).primaryColor,
+                  icon: const Icon(
+                    Icons.play_arrow_rounded,
+                    // size: 50,
+                  ),
+                ),
+                IconButton(
+                  splashRadius: 30,
+                  iconSize: 50,
+                  onPressed: () {},
+                  color: Theme.of(context).primaryColor,
+                  icon: const Icon(
+                    Icons.skip_next_rounded,
+                    // size: 50,
+                  ),
+                ),
+              ],
+            )
+          ],
         ),
       ),
     );
