@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:islamiapp/ui/theme_data.dart';
 
 class SebhaTab extends StatefulWidget {
   const SebhaTab({super.key});
@@ -17,16 +18,13 @@ class _SebhaTabState extends State<SebhaTab> {
     return Center(
       child: Column(
         children: [
-          Image.asset('assets/images/sebha_header.png'),
+          Image.asset(ThemeMode.system == ThemeMode.dark
+              ? 'assets/images/sebha_header_dark.png'
+              : 'assets/images/sebha_header.png'),
           Container(
             margin: const EdgeInsets.only(top: 40),
-            child: const Text(
-              'Sebha Count',
-              style: TextStyle(
-                fontSize: 20,
-                color: Color(0xFF242424),
-              ),
-            ),
+            child: Text('Sebha Count',
+                style: Theme.of(context).textTheme.bodyText2),
           ),
           Container(
             margin: const EdgeInsets.symmetric(vertical: 20),
@@ -39,31 +37,31 @@ class _SebhaTabState extends State<SebhaTab> {
               child: Center(
                 child: Text(
                   sebhaCount.toString(),
-                  style: const TextStyle(
-                    fontSize: 20,
+                  style: TextStyle(
+                    fontSize: Theme.of(context).textTheme.bodyText2?.fontSize,
                     fontWeight: FontWeight.bold,
-                    color: Color(0xFF242424),
+                    color: Theme.of(context).textTheme.bodyText2?.color,
                   ),
                 ),
               ),
             ),
           ),
           ElevatedButton(
-            style: ButtonStyle(
-              minimumSize: MaterialStateProperty.all(Size.zero),
-            ),
+            style: Theme.of(context).elevatedButtonTheme.style,
             onPressed: () {
               sebhaCount++;
               setState(() {});
             },
-            child: const Padding(
-              padding: EdgeInsets.all(8.0),
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
               child: Text(
                 'Sobhan Allah',
                 style: TextStyle(
-                  fontSize: 20,
+                  fontSize: Theme.of(context).textTheme.bodyText2?.fontSize,
                   fontWeight: FontWeight.bold,
-                  color: Colors.white,
+                  color: ThemeMode.system == ThemeMode.dark
+                      ? Colors.black
+                      : Colors.white,
                 ),
               ),
             ),

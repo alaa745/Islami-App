@@ -5,7 +5,7 @@ import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:islamiapp/ui/home/hadeth/hadeth.dart';
 import 'package:islamiapp/ui/home/hadeth/hadeth_details.dart';
 import 'package:islamiapp/ui/home/hadeth/hadeth_details_args.dart';
-import 'package:islamiapp/ui/home/quran/hadeth_name.dart';
+import 'package:islamiapp/ui/home/hadeth/hadeth_name.dart';
 
 class HadethTab extends StatefulWidget {
   HadethTab({super.key});
@@ -34,19 +34,19 @@ class _HadethTabState extends State<HadethTab> {
         Container(
           width: double.infinity,
           height: 2,
-          color: Theme.of(context).primaryColor,
+          color: Theme.of(context).accentColor,
           margin: EdgeInsets.symmetric(vertical: 10),
         ),
         Container(
-          child: const Text(
+          child: Text(
             'Hadeth Number',
-            style: TextStyle(fontSize: 25, color: Colors.black),
+            style: Theme.of(context).textTheme.headline5,
           ),
         ),
         Container(
           width: double.infinity,
           height: 2,
-          color: Theme.of(context).primaryColor,
+          color: Theme.of(context).accentColor,
           margin: EdgeInsets.symmetric(vertical: 10),
         ),
         Expanded(
@@ -55,7 +55,7 @@ class _HadethTabState extends State<HadethTab> {
               return Container(
                 width: double.infinity,
                 height: 2,
-                color: Theme.of(context).primaryColor,
+                color: Theme.of(context).accentColor,
                 margin: EdgeInsets.symmetric(vertical: 5, horizontal: 20),
               );
             },

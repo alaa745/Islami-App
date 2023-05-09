@@ -13,10 +13,7 @@ class HadethContent extends StatelessWidget {
         child: Text(
           content,
           textAlign: TextAlign.center,
-          style: const TextStyle(
-            fontSize: 20,
-            color: Color(0xFF242424),
-          ),
+          style: Theme.of(context).textTheme.bodyText2,
         ),
       ),
     );
