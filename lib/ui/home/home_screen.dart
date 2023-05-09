@@ -5,6 +5,7 @@ import 'package:islamiapp/ui/home/hadeth/hadeth_tab.dart';
 import 'package:islamiapp/ui/home/quran/quran_tab.dart';
 import 'package:islamiapp/ui/home/radio/radio_tab.dart';
 import 'package:islamiapp/ui/home/sebha/sebha_tab.dart';
+import 'package:islamiapp/ui/theme_data.dart';
 
 class HomeScreen extends StatefulWidget {
   static const routeName = 'Home';
@@ -24,9 +25,11 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage('assets/images/main_background.png'),
+          image: AssetImage(ThemeMode.system == ThemeMode.dark
+              ? 'assets/images/main_background_dark.png'
+              : 'assets/images/main_background.png'),
           fit: BoxFit.fill,
         ),
       ),

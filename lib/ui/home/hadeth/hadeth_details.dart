@@ -6,6 +6,7 @@ import 'package:islamiapp/ui/home/hadeth/hadeth_content.dart';
 import 'package:islamiapp/ui/home/hadeth/hadeth_details_args.dart';
 import 'package:islamiapp/ui/home/quran/sura_content.dart';
 import 'package:islamiapp/ui/home/quran/sura_details_args.dart';
+import 'package:islamiapp/ui/theme_data.dart';
 
 class HadethDetails extends StatefulWidget {
   static const routeName = 'HadethDetails';
@@ -29,16 +30,18 @@ class _HadethDetailsState extends State<HadethDetails> {
       setState(() {});
     }
     return Container(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage('assets/images/main_background.png'),
+          image: AssetImage(ThemeMode.system == ThemeMode.dark
+              ? 'assets/images/main_background_dark.png'
+              : 'assets/images/main_background.png'),
           fit: BoxFit.fill,
         ),
       ),
       child: Scaffold(
         // extendBodyBehindAppBar: true,
         appBar: AppBar(
-          centerTitle: true,
+          // centerTitle: true,
           title: const Text(
             'Islami',
           ),
@@ -59,17 +62,14 @@ class _HadethDetailsState extends State<HadethDetails> {
                       child: Center(
                         child: Text(
                           args.title,
-                          style: const TextStyle(
-                            fontSize: 25,
-                            color: Color(0xFF242424),
-                          ),
+                          style: Theme.of(context).textTheme.headline5,
                         ),
                       ),
                     ),
                     Container(
                         width: double.infinity,
                         height: 2,
-                        color: Theme.of(context).primaryColor,
+                        color: Theme.of(context).accentColor,
                         margin: const EdgeInsets.only(bottom: 15)),
                     Container(
                       child: hadethContent.isEmpty
