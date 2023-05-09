@@ -3,6 +3,7 @@ import 'package:islamiapp/ui/home/hadeth/hadeth_details.dart';
 import 'package:islamiapp/ui/home/home_screen.dart';
 import 'package:islamiapp/ui/home/quran/sura_details.dart';
 import 'package:islamiapp/ui/splash/splash_screen.dart';
+import 'package:islamiapp/ui/theme_data.dart';
 
 void main() {
   runApp(MyApp());
@@ -14,38 +15,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primaryColor: const Color(0xFFB7935F),
-        elevatedButtonTheme: const ElevatedButtonThemeData(
-          style: ButtonStyle(
-            backgroundColor: MaterialStatePropertyAll(
-              Color(0xFFB7935F),
-            ),
-            shape: MaterialStatePropertyAll(
-              RoundedRectangleBorder(
-                borderRadius: BorderRadius.all(
-                  Radius.circular(25),
-                ),
-              ),
-            ),
-          ),
-        ),
-        scaffoldBackgroundColor: Colors.transparent,
-        bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-          selectedItemColor: Color(0xFF242424),
-          unselectedItemColor: Colors.white,
-        ),
-        appBarTheme: const AppBarTheme(
-          centerTitle: true,
-          color: Colors.transparent,
-          elevation: 0,
-          iconTheme: IconThemeData(color: Colors.black),
-          titleTextStyle: TextStyle(
-            fontSize: 30,
-            color: Color(0xFF242424),
-          ),
-        ),
-      ),
+      theme: MyThemeData.lightTheme,
+      darkTheme: MyThemeData.darkTheme,
+      themeMode: ThemeMode.system,
       initialRoute: SplashScreen.routeName,
       routes: {
         SplashScreen.routeName: (context) => SplashScreen(),

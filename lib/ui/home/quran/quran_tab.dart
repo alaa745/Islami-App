@@ -4,6 +4,7 @@ import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:islamiapp/ui/home/quran/sura_details.dart';
 import 'package:islamiapp/ui/home/quran/sura_details_args.dart';
 import 'package:islamiapp/ui/home/quran/verse_name.dart';
+import 'package:islamiapp/ui/theme_data.dart';
 
 class QuranTab extends StatelessWidget {
   QuranTab({super.key});
@@ -133,19 +134,19 @@ class QuranTab extends StatelessWidget {
         Container(
           width: double.infinity,
           height: 2,
-          color: Theme.of(context).primaryColor,
+          color: Theme.of(context).accentColor,
           margin: EdgeInsets.symmetric(vertical: 10),
         ),
         Container(
-          child: const Text(
+          child: Text(
             'Chapter Name',
-            style: TextStyle(fontSize: 25, color: Colors.black),
+            style: Theme.of(context).textTheme.headline5,
           ),
         ),
         Container(
           width: double.infinity,
           height: 2,
-          color: Theme.of(context).primaryColor,
+          color: Theme.of(context).accentColor,
           margin: EdgeInsets.symmetric(vertical: 10),
         ),
         Expanded(
@@ -154,7 +155,7 @@ class QuranTab extends StatelessWidget {
               return Container(
                 width: double.infinity,
                 height: 2,
-                color: Theme.of(context).primaryColor,
+                color: Theme.of(context).accentColor,
                 margin: EdgeInsets.symmetric(vertical: 5, horizontal: 20),
               );
             },

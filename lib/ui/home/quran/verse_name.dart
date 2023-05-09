@@ -11,10 +11,7 @@ class VerseName extends StatelessWidget {
     return Container(
       child: Text(
         title,
-        style: const TextStyle(
-          fontSize: 25,
-          color: Color(0xFF242424),
-        ),
+        style: Theme.of(context).textTheme.headline5,
       ),
     );
   }
