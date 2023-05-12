@@ -5,7 +5,7 @@ import 'package:islamiapp/ui/providers/settings_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-class ThemeBottomSheet extends StatelessWidget {
+class LanguageBottomSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var provider = Provider.of<SettingsProvidr>(context);
@@ -17,24 +17,24 @@ class ThemeBottomSheet extends StatelessWidget {
         children: [
           InkWell(
             onTap: () {
-              provider.enableLightMode();
+              provider.changeLanguage('en');
             },
-            child: provider.themeMode == ThemeMode.light
+            child: provider.languageCode == "en"
                 ? getSelectedWidget(
-                    context, AppLocalizations.of(context)!.light)
+                    context, AppLocalizations.of(context)!.english)
                 : getUnSelectedWidget(
-                    context, AppLocalizations.of(context)!.light),
+                    context, AppLocalizations.of(context)!.english),
           ),
           const SizedBox(height: 8.0),
           InkWell(
               onTap: () {
-                provider.enableDarkMode();
+                provider.changeLanguage('ar');
               },
-              child: provider.themeMode == ThemeMode.dark
+              child: provider.languageCode == "ar"
                   ? getSelectedWidget(
-                      context, AppLocalizations.of(context)!.dark)
+                      context, AppLocalizations.of(context)!.arabic)
                   : getUnSelectedWidget(
-                      context, AppLocalizations.of(context)!.dark)),
+                      context, AppLocalizations.of(context)!.arabic)),
         ],
       ),
     );

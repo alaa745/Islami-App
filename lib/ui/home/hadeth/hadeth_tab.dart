@@ -6,6 +6,10 @@ import 'package:islamiapp/ui/home/hadeth/hadeth.dart';
 import 'package:islamiapp/ui/home/hadeth/hadeth_details.dart';
 import 'package:islamiapp/ui/home/hadeth/hadeth_details_args.dart';
 import 'package:islamiapp/ui/home/hadeth/hadeth_name.dart';
+import 'package:provider/provider.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
+import '../../providers/settings_provider.dart';
 
 class HadethTab extends StatefulWidget {
   HadethTab({super.key});
@@ -39,7 +43,7 @@ class _HadethTabState extends State<HadethTab> {
         ),
         Container(
           child: Text(
-            'Hadeth Number',
+            AppLocalizations.of(context)!.hadeth_number,
             style: Theme.of(context).textTheme.headline5,
           ),
         ),
