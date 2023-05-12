@@ -8,7 +8,7 @@ import 'package:islamiapp/ui/home/quran/sura_content.dart';
 import 'package:islamiapp/ui/home/quran/sura_details_args.dart';
 import 'package:islamiapp/ui/theme_data.dart';
 import 'package:provider/provider.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import '../../providers/settings_provider.dart';
 
 class HadethDetails extends StatefulWidget {
@@ -47,8 +47,8 @@ class _HadethDetailsState extends State<HadethDetails> {
         // extendBodyBehindAppBar: true,
         appBar: AppBar(
           // centerTitle: true,
-          title: const Text(
-            'Islami',
+          title: Text(
+            AppLocalizations.of(context)!.app_title,
           ),
         ),
         body: Column(

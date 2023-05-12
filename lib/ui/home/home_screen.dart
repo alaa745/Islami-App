@@ -9,6 +9,7 @@ import 'package:islamiapp/ui/home/settings/settings_tab.dart';
 import 'package:islamiapp/ui/providers/settings_provider.dart';
 import 'package:islamiapp/ui/theme_data.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HomeScreen extends StatefulWidget {
   static const routeName = 'Home';
@@ -43,8 +44,8 @@ class _HomeScreenState extends State<HomeScreen> {
         // extendBodyBehindAppBar: true,
         appBar: AppBar(
           centerTitle: true,
-          title: const Text(
-            'Islami',
+          title: Text(
+            AppLocalizations.of(context)!.app_title,
           ),
         ),
         body: tabs[selectedIndex],
@@ -59,27 +60,27 @@ class _HomeScreenState extends State<HomeScreen> {
             BottomNavigationBarItem(
               backgroundColor: Theme.of(context).primaryColor,
               icon: const ImageIcon(AssetImage('assets/images/quran.png')),
-              label: 'Quran',
+              label: AppLocalizations.of(context)!.quran,
             ),
             BottomNavigationBarItem(
               backgroundColor: Theme.of(context).primaryColor,
               icon: const ImageIcon(AssetImage('assets/images/hadeth.png')),
-              label: 'Hadeth',
+              label: AppLocalizations.of(context)!.hadeth,
             ),
             BottomNavigationBarItem(
               backgroundColor: Theme.of(context).primaryColor,
               icon: const ImageIcon(AssetImage('assets/images/sebha.png')),
-              label: 'Sebha',
+              label: AppLocalizations.of(context)!.tasbeh,
             ),
             BottomNavigationBarItem(
               backgroundColor: Theme.of(context).primaryColor,
               icon: const ImageIcon(AssetImage('assets/images/radio.png')),
-              label: 'Radio',
+              label: AppLocalizations.of(context)!.radio,
             ),
             BottomNavigationBarItem(
               backgroundColor: Theme.of(context).primaryColor,
               icon: const Icon(Icons.settings),
-              label: 'Settings',
+              label: AppLocalizations.of(context)!.settings,
             ),
           ],
         ),

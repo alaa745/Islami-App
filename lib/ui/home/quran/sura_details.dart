@@ -7,6 +7,7 @@ import 'package:islamiapp/ui/home/quran/sura_details_args.dart';
 import 'package:islamiapp/ui/providers/settings_provider.dart';
 import 'package:islamiapp/ui/theme_data.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class SuraDetails extends StatefulWidget {
   static const routeName = 'SuraDetails';
@@ -43,8 +44,8 @@ class _SuraDetailsState extends State<SuraDetails> {
         // extendBodyBehindAppBar: true,
         appBar: AppBar(
           // centerTitle: true,
-          title: const Text(
-            'Islami',
+          title: Text(
+            AppLocalizations.of(context)!.app_title,
           ),
         ),
         body: Column(
