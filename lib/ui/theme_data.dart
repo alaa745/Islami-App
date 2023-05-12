@@ -30,6 +30,11 @@ class MyThemeData {
       selectedItemColor: Color(0xFF242424),
       unselectedItemColor: Colors.white,
     ),
+    bottomSheetTheme: const BottomSheetThemeData(
+        backgroundColor: Colors.white,
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(20), topRight: Radius.circular(20)))),
     appBarTheme: const AppBarTheme(
       centerTitle: true,
       color: Colors.transparent,
@@ -71,6 +76,11 @@ class MyThemeData {
       selectedItemColor: darkAccentColor,
       unselectedItemColor: Colors.white,
     ),
+    bottomSheetTheme: const BottomSheetThemeData(
+        backgroundColor: darkPrimaryColor,
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(20), topRight: Radius.circular(20)))),
     elevatedButtonTheme: const ElevatedButtonThemeData(
       style: ButtonStyle(
         backgroundColor: MaterialStatePropertyAll(

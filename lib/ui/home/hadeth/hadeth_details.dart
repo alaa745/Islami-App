@@ -7,6 +7,9 @@ import 'package:islamiapp/ui/home/hadeth/hadeth_details_args.dart';
 import 'package:islamiapp/ui/home/quran/sura_content.dart';
 import 'package:islamiapp/ui/home/quran/sura_details_args.dart';
 import 'package:islamiapp/ui/theme_data.dart';
+import 'package:provider/provider.dart';
+
+import '../../providers/settings_provider.dart';
 
 class HadethDetails extends StatefulWidget {
   static const routeName = 'HadethDetails';
@@ -22,6 +25,8 @@ class _HadethDetailsState extends State<HadethDetails> {
 
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<SettingsProvidr>(context);
+
     var args =
         ModalRoute.of(context)?.settings.arguments as HadethDetailsArguments;
 
@@ -32,7 +37,7 @@ class _HadethDetailsState extends State<HadethDetails> {
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage(ThemeMode.system == ThemeMode.dark
+          image: AssetImage(provider.themeMode == ThemeMode.dark
               ? 'assets/images/main_background_dark.png'
               : 'assets/images/main_background.png'),
           fit: BoxFit.fill,
