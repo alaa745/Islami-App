@@ -2,12 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:islamiapp/ui/home/settings/Theme_bottom_sheet.dart';
+import 'package:islamiapp/ui/providers/settings_provider.dart';
+import 'package:provider/provider.dart';
 
 class SettingsTab extends StatelessWidget {
   const SettingsTab({super.key});
 
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<SettingsProvidr>(context);
     return Container(
       padding: const EdgeInsets.all(8.0),
       margin: const EdgeInsets.symmetric(vertical: 35),
@@ -34,7 +37,7 @@ class SettingsTab extends StatelessWidget {
                 ),
               ),
               child: Text(
-                'Light',
+                provider.themeMode == ThemeMode.light ? 'Light' : 'Dark',
                 style: Theme.of(context).textTheme.headline5,
               ),
             ),

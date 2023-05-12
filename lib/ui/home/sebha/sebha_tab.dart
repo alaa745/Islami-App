@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:islamiapp/ui/theme_data.dart';
+import 'package:provider/provider.dart';
+
+import '../../providers/settings_provider.dart';
 
 class SebhaTab extends StatefulWidget {
   const SebhaTab({super.key});
@@ -15,10 +18,12 @@ class _SebhaTabState extends State<SebhaTab> {
 
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<SettingsProvidr>(context);
+
     return Center(
       child: Column(
         children: [
-          Image.asset(ThemeMode.system == ThemeMode.dark
+          Image.asset(provider.themeMode == ThemeMode.dark
               ? 'assets/images/sebha_header_dark.png'
               : 'assets/images/sebha_header.png'),
           Container(
@@ -31,7 +36,7 @@ class _SebhaTabState extends State<SebhaTab> {
             height: 75,
             width: 65,
             child: Card(
-              color: const Color(0xFFFB7935F),
+              // color: const Color(0xFFFB7935F),
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20)),
               child: Center(

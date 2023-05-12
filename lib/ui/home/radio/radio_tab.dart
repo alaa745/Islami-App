@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:provider/provider.dart';
+
+import '../../providers/settings_provider.dart';
 
 class RadioTab extends StatelessWidget {
   const RadioTab({super.key});
 
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<SettingsProvidr>(context);
+
     return Container(
       margin: const EdgeInsets.only(top: 150),
       child: Center(
@@ -16,9 +21,11 @@ class RadioTab extends StatelessWidget {
             Image.asset('assets/images/radio_header.png'),
             Container(
               margin: const EdgeInsets.symmetric(vertical: 20),
-              child: const Text(
+              child: Text(
                 'Quran karem radio',
-                style: TextStyle(fontSize: 22, color: Color(0xFF242424)),
+                style: TextStyle(
+                    fontSize: 22,
+                    color: Theme.of(context).textTheme.bodyText1!.color),
               ),
             ),
             Row(
@@ -28,7 +35,7 @@ class RadioTab extends StatelessWidget {
                   splashRadius: 30,
                   iconSize: 50,
                   onPressed: () {},
-                  color: Theme.of(context).primaryColor,
+                  color: Theme.of(context).accentColor,
                   icon: const Icon(
                     Icons.skip_previous_rounded,
                     // size: 50,
@@ -38,7 +45,7 @@ class RadioTab extends StatelessWidget {
                   splashRadius: 40,
                   iconSize: 70,
                   onPressed: () {},
-                  color: Theme.of(context).primaryColor,
+                  color: Theme.of(context).accentColor,
                   icon: const Icon(
                     Icons.play_arrow_rounded,
                     // size: 50,
@@ -48,7 +55,7 @@ class RadioTab extends StatelessWidget {
                   splashRadius: 30,
                   iconSize: 50,
                   onPressed: () {},
-                  color: Theme.of(context).primaryColor,
+                  color: Theme.of(context).accentColor,
                   icon: const Icon(
                     Icons.skip_next_rounded,
                     // size: 50,

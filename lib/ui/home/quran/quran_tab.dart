@@ -147,7 +147,7 @@ class QuranTab extends StatelessWidget {
           width: double.infinity,
           height: 2,
           color: Theme.of(context).accentColor,
-          margin: EdgeInsets.symmetric(vertical: 10),
+          margin: const EdgeInsets.symmetric(vertical: 10),
         ),
         Expanded(
           child: ListView.separated(
@@ -156,7 +156,7 @@ class QuranTab extends StatelessWidget {
                 width: double.infinity,
                 height: 2,
                 color: Theme.of(context).accentColor,
-                margin: EdgeInsets.symmetric(vertical: 5, horizontal: 20),
+                margin: const EdgeInsets.symmetric(vertical: 5, horizontal: 20),
               );
             },
             itemCount: chapters.length,
