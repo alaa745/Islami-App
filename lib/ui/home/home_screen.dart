@@ -5,6 +5,7 @@ import 'package:islamiapp/ui/home/hadeth/hadeth_tab.dart';
 import 'package:islamiapp/ui/home/quran/quran_tab.dart';
 import 'package:islamiapp/ui/home/radio/radio_tab.dart';
 import 'package:islamiapp/ui/home/sebha/sebha_tab.dart';
+import 'package:islamiapp/ui/home/settings/settings_tab.dart';
 import 'package:islamiapp/ui/theme_data.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -21,6 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
     HadethTab(),
     SebhaTab(),
     RadioTab(),
+    SettingsTab()
   ];
   @override
   Widget build(BuildContext context) {
@@ -69,6 +71,11 @@ class _HomeScreenState extends State<HomeScreen> {
               backgroundColor: Theme.of(context).primaryColor,
               icon: const ImageIcon(AssetImage('assets/images/radio.png')),
               label: 'Radio',
+            ),
+            BottomNavigationBarItem(
+              backgroundColor: Theme.of(context).primaryColor,
+              icon: const Icon(Icons.settings),
+              label: 'Settings',
             ),
           ],
         ),
