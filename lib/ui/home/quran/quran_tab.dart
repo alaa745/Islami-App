@@ -5,6 +5,7 @@ import 'package:islamiapp/ui/home/quran/sura_details.dart';
 import 'package:islamiapp/ui/home/quran/sura_details_args.dart';
 import 'package:islamiapp/ui/home/quran/verse_name.dart';
 import 'package:islamiapp/ui/theme_data.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class QuranTab extends StatelessWidget {
   QuranTab({super.key});
@@ -139,7 +140,7 @@ class QuranTab extends StatelessWidget {
         ),
         Container(
           child: Text(
-            'Chapter Name',
+            AppLocalizations.of(context)!.chapter_name,
             style: Theme.of(context).textTheme.headline5,
           ),
         ),

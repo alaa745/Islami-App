@@ -1,0 +1,19 @@
+{
+    "app_title": "أسلامي",
+    "chapter_name": "أسم السورة",
+    "hadeth_number": "رقم الحديث",
+    "quran": "القرآن",
+    "hadeth": "الحديث",
+    "tasbeh": "التسبيح",
+    "radio": "الأذاعة",
+    "settings": "الأعدادات",
+    "quran_radio": "اذاعة القرآن الكريم",
+    "sebha_count": "عداد السبحة",
+    "sobahn_allah": "سبحان الله",
+    "theme": "المظهر",
+    "light": "فاتح",
+    "dark": "غامق",
+    "language": "اللغة",
+    "arabic": "العربية",
+    "english": "الأنجليزية"
+}

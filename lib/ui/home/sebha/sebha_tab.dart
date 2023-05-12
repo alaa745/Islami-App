@@ -3,6 +3,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:islamiapp/ui/theme_data.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../../providers/settings_provider.dart';
 
@@ -28,7 +29,7 @@ class _SebhaTabState extends State<SebhaTab> {
               : 'assets/images/sebha_header.png'),
           Container(
             margin: const EdgeInsets.only(top: 40),
-            child: Text('Sebha Count',
+            child: Text(AppLocalizations.of(context)!.sebha_count,
                 style: Theme.of(context).textTheme.bodyText2),
           ),
           Container(
@@ -60,7 +61,7 @@ class _SebhaTabState extends State<SebhaTab> {
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text(
-                'Sobhan Allah',
+                AppLocalizations.of(context)!.sobahn_allah,
                 style: TextStyle(
                   fontSize: Theme.of(context).textTheme.bodyText2?.fontSize,
                   fontWeight: FontWeight.bold,

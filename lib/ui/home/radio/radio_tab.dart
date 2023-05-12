@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:provider/provider.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import '../../providers/settings_provider.dart';
 
 class RadioTab extends StatelessWidget {
@@ -22,7 +22,7 @@ class RadioTab extends StatelessWidget {
             Container(
               margin: const EdgeInsets.symmetric(vertical: 20),
               child: Text(
-                'Quran karem radio',
+                AppLocalizations.of(context)!.quran_radio,
                 style: TextStyle(
                     fontSize: 22,
                     color: Theme.of(context).textTheme.bodyText1!.color),
